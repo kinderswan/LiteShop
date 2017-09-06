@@ -18,7 +18,5 @@ namespace LiteShop.Services
         ShopEntity GetById(int id);
 
         IList<ShopEntity> GetAll();
-
-        void ApplyChanges();
     }
 }

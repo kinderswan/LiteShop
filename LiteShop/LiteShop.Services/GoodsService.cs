@@ -23,31 +23,20 @@ namespace LiteShop.Services
         public void Add(GoodsItemEntity entity)
         {
             this.mGoodsItemRepository.Add(entity);
+			this.mUnitOfWork.Commit();
         }
 
         public void Update(GoodsItemEntity entity)
         {
             this.mGoodsItemRepository.Update(entity);
+			this.mUnitOfWork.Commit();
         }
 
         public void Delete(int id)
         {
             this.mGoodsItemRepository.Delete(id);
+			this.mUnitOfWork.Commit();
         }
 
-        public GoodsItemEntity GetById(int id)
-        {
-            return this.mGoodsItemRepository.GetById(id);
-        }
-
-        public IEnumerable<GoodsItemEntity> GetAll()
-        {
-            return this.mGoodsItemRepository.GetAll();
-        }
-
-        public void ApplyChanges()
-        {
-            this.mUnitOfWork.Commit();
-        }
     }
 }

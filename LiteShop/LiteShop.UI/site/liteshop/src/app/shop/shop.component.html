@@ -1,0 +1,38 @@
+<div><ul class="shops" #shops>
+  <li *ngFor="let shop of shopModelsDisplayed">
+    Name: <input type="text" [value]="shop.Name" [(ngModel)]="shop.Name"> 
+    Address: <input type="text" [value]="shop.Address" [(ngModel)]="shop.Address" /> 
+    Hours: <input type="text" [value]="shop.WorkingHours" [(ngModel)]="shop.WorkingHours" />
+    <input type="button" value="Save" (click)="saveShop(shop)" />
+    <input type="button" value="Delete" (click)="deleteShop(shop)" />
+    <h3>Goods in this market</h3>
+    <ul>
+      <li *ngFor="let goods of shop?.GoodsItems">
+        Name: <input type="text" [value]="goods.Name" [(ngModel)]="goods.Name" />
+        Description: <input type="text" [value]="goods.Description" [(ngModel)]="goods.Description" />
+        <input type="button" value="Save" (click)="saveGoods(goods)" />
+        <input type="button" value="Delete" (click)="deleteGoods(goods)" />
+      </li>
+    </ul>
+<hr>
+  </li>
+  <hr>
+</ul></div>
+
+<h3>Add new shop</h3>
+<div>
+    Name: <input type="text" [(ngModel)]="shopModel.Name"> 
+    Address: <input type="text" [(ngModel)]="shopModel.Address" /> 
+    Hours: <input type="text" [(ngModel)]="shopModel.WorkingHours" />
+    <input type="button" value="Add" (click)="addShop(shopModel)" />
+</div>
+
+<h3>Add new position to the shop</h3>
+<div>
+    <select [(ngModel)]="selectedShop">
+        <option *ngFor="let shop of shopModelsDisplayed" [ngValue]="shop">{{shop.Name}}</option>
+      </select>
+Name: <input type="text" [(ngModel)]="goodsModel.Name" />
+Description: <input type="text" [(ngModel)]="goodsModel.Description" />
+<input type="button" value="Add" (click)="addGoods(goodsModel)" />
+</div>

@@ -23,16 +23,19 @@ namespace LiteShop.Services
         public void Add(ShopEntity entity)
         {
             this.mShopRepository.Add(entity);
+			this.mUnitOfWork.Commit();
         }
 
         public void Update(ShopEntity entity)
         {
             this.mShopRepository.Update(entity);
+			this.mUnitOfWork.Commit();
         }
 
         public void Delete(int id)
         {
             this.mShopRepository.Delete(id);
+			this.mUnitOfWork.Commit();
         }
 
         public ShopEntity GetById(int id)
@@ -43,11 +46,6 @@ namespace LiteShop.Services
         public IList<ShopEntity> GetAll()
         {
             return this.mShopRepository.GetAll();
-        }
-
-        public void ApplyChanges()
-        {
-            this.mUnitOfWork.Commit();
         }
     }
 }

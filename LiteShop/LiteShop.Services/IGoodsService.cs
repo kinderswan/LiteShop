@@ -14,11 +14,5 @@ namespace LiteShop.Services
         void Update(GoodsItemEntity entity);
 
         void Delete(int id);
-
-        GoodsItemEntity GetById(int id);
-
-        IEnumerable<GoodsItemEntity> GetAll();
-
-        void ApplyChanges();
     }
 }
