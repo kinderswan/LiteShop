@@ -11,7 +11,7 @@ export class ShopService {
 
   }
 
-  private baseUrl = 'http://10.143.12.113:4343/api/shops/';
+  private baseUrl = 'http://example.com/api/shops/';
 
   getShops(): Observable<ShopModel[]> {
     return this.http.get(this.baseUrl, {

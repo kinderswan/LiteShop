@@ -87,7 +87,5 @@ namespace LiteShop.Web.Controllers
 			this.mGoodsService.Delete(id);
 			return this.Ok("Deleted");
 		}
-
-
 	}
 }
